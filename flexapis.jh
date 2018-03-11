@@ -1,0 +1,31 @@
+/**
+* The main flight filing document.
+ */
+entity Apis {
+	flightType String,
+    dateAssembled ZonedDateTime,
+    emergencyContact String,
+    itinerary String,
+    aircraft String,
+    crew String,
+    passenger String,
+}
+
+entity Contact {
+	lastName String,
+    firstName String,
+    middleName String,
+    telephone String,
+    email String
+}
+
+relationship OneToMany {
+	Contact{Apis(emergencyContact)} to Apis{contact}
+}
+
+dto * with mapstruct
+
+// Set service options to all except few
+// service all with serviceImpl except Employee, Job
+// Set an angular suffix
+angularSuffix * with apisSuffix
