@@ -4,7 +4,7 @@
 entity Apis {
 	flightType String,
     dateAssembled ZonedDateTime,
-    emergencyContact String,
+    emergencyContactEmail String,
     itinerary String,
     aircraft String,
     crew String,
@@ -17,10 +17,6 @@ entity Contact {
     middleName String,
     telephone String,
     email String
-}
-
-relationship OneToMany {
-	Contact{Apis(emergencyContact)} to Apis{contact}
 }
 
 dto * with mapstruct

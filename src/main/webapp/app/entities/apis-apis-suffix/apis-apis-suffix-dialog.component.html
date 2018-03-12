@@ -1,0 +1,62 @@
+<form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+
+    <div class="modal-header">
+        <h4 class="modal-title" id="myApisLabel">Create or edit a Apis</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                (click)="clear()">&times;</button>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" [hidden]="!apis.id">
+            <label for="id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                   [(ngModel)]="apis.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" for="field_flightType">Flight Type</label>
+            <input type="text" class="form-control" name="flightType" id="field_flightType"
+                [(ngModel)]="apis.flightType" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" for="field_dateAssembled">Date Assembled</label>
+            <div class="d-flex">
+                <input id="field_dateAssembled" type="datetime-local" class="form-control" name="dateAssembled" [(ngModel)]="apis.dateAssembled"
+                />
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" for="field_emergencyContactEmail">Emergency Contact Email</label>
+            <input type="text" class="form-control" name="emergencyContactEmail" id="field_emergencyContactEmail"
+                [(ngModel)]="apis.emergencyContactEmail" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" for="field_itinerary">Itinerary</label>
+            <input type="text" class="form-control" name="itinerary" id="field_itinerary"
+                [(ngModel)]="apis.itinerary" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" for="field_aircraft">Aircraft</label>
+            <input type="text" class="form-control" name="aircraft" id="field_aircraft"
+                [(ngModel)]="apis.aircraft" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" for="field_crew">Crew</label>
+            <input type="text" class="form-control" name="crew" id="field_crew"
+                [(ngModel)]="apis.crew" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" for="field_passenger">Passenger</label>
+            <input type="text" class="form-control" name="passenger" id="field_passenger"
+                [(ngModel)]="apis.passenger" />
+        </div>
+
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="clear()">
+            <span class="fa fa-ban"></span>&nbsp;<span>Cancel</span>
+        </button>
+        <button type="submit" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+            <span class="fa fa-save"></span>&nbsp;<span>Save</span>
+        </button>
+    </div>
+</form>
