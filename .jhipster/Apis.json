@@ -1,0 +1,42 @@
+{
+    "fluentMethods": true,
+    "relationships": [],
+    "fields": [
+        {
+            "fieldName": "flightType",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "dateAssembled",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "emergencyContactEmail",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "itinerary",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "aircraft",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "crew",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "passenger",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20180311140958",
+    "javadoc": "The main flight filing document.",
+    "entityTableName": "apis",
+    "dto": "mapstruct",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "angularJSSuffix": "apisSuffix"
+}

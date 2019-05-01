@@ -1,0 +1,50 @@
+
+<div *ngIf="apis">
+    <h2><span>Apis</span> {{apis.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row-md jh-entity-details">
+        <dt><span>Flight Type</span></dt>
+        <dd>
+            <span>{{apis.flightType}}</span>
+        </dd>
+        <dt><span>Date Assembled</span></dt>
+        <dd>
+            <span>{{apis.dateAssembled | date:'medium'}}</span>
+        </dd>
+        <dt><span>Emergency Contact Email</span></dt>
+        <dd>
+            <span>{{apis.emergencyContactEmail}}</span>
+        </dd>
+        <dt><span>Itinerary</span></dt>
+        <dd>
+            <span>{{apis.itinerary}}</span>
+        </dd>
+        <dt><span>Aircraft</span></dt>
+        <dd>
+            <span>{{apis.aircraft}}</span>
+        </dd>
+        <dt><span>Crew</span></dt>
+        <dd>
+            <span>{{apis.crew}}</span>
+        </dd>
+        <dt><span>Passenger</span></dt>
+        <dd>
+            <span>{{apis.passenger}}</span>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'apis-apis-suffix/'+ apis.id + '/edit'} }]"
+            replaceUrl="true"
+            queryParamsHandling="merge"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span> Edit</span>
+    </button>
+</div>
